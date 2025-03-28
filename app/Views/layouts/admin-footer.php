@@ -96,16 +96,17 @@
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Ambil data dari PHP
+            // Konversi data ke angka bulat
             const browserStats = {
-                chrome: <?= $chrome_visitor; ?>,
-                firefox: <?= $firefox_visitor; ?>,
-                explorer: <?= $explorer_visitor; ?>,
-                safari: <?= $safari_visitor; ?>,
-                opera: <?= $opera_visitor; ?>,
-                robots: <?= $robot_visitor; ?>,
-                others: <?= $other_visitor; ?>
+                chrome: Math.round(<?= $chrome_visitor; ?>),
+                firefox: Math.round(<?= $firefox_visitor; ?>),
+                explorer: Math.round(<?= $explorer_visitor; ?>),
+                safari: Math.round(<?= $safari_visitor; ?>),
+                opera: Math.round(<?= $opera_visitor; ?>),
+                robots: Math.round(<?= $robot_visitor; ?>),
+                others: Math.round(<?= $other_visitor; ?>)
             };
+
 
             // Konfigurasi Pie Chart
             const pie_chart_options = {
